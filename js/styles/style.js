@@ -1,18 +1,19 @@
 (function () {
-  "use strict";
+  var fileSelect = document.getElementById("fileSelect"),
+    fileElem = document.getElementById("fileElem");
 
-  $(".input-file").each(function () {
-    var $input = $(this),
-      $label = $input.next(".js-labelFile"),
-      labelVal = $label.html();
-
-    $input.on("change", function (element) {
-      var fileName = "";
-      if (element.target.value)
-        fileName = element.target.value.split("\\").pop();
-      fileNamex
-        ? $label.addClass("has-file").find(".js-fileName").html(fileName)
-        : $label.removeClass("has-file").html(labelVal);
-    });
+  fileElem.addEventListener("change", function () {
+    fileSelect.innerHTML = "Selected";
   });
+
+  fileSelect.addEventListener(
+    "click",
+    function (e) {
+      if (fileElem) {
+        fileElem.click();
+      }
+      e.preventDefault();
+    },
+    false
+  );
 })();
